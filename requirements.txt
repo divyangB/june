@@ -1,0 +1,29 @@
+Used libraries:
+
+1. 'time' for performing time related functions
+2. 'os' for performing os functions within python script
+3. 'pafy' for searching best urls
+4. 'vlc' for playing videos
+5. 'cv2' for camera related functions
+6. 'BeautifulSoup' for scrapping
+7. 'requests' for scrapping
+8. smtplib for email services
+9.  
+
+
+
+----------------import os
+from gtts import gTTS    #for text to speech conversion
+import speech_recognition as sr    #for speech recognition
+import webbrowser as wb
+import time,os
+import requests
+import pafy
+import vlc
+import cv2
+from bs4 import BeautifulSoup
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.image import MIMEImage
+from email.mime.text import MIMEText---------------------------------
+
