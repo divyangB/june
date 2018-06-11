@@ -21,7 +21,7 @@ r = sr.Recognizer()
 
 guide = '''
 	Beware!! I am watching you :)
-	1. Greet friday.
+	1. Greet June
 	2. Run a command
 	3. Play a song on youtube
 	4. Search something on internet(say "search+keyword")
@@ -39,7 +39,6 @@ cap.release()
 
 #sending email when the program is accessed
 msg = MIMEMultipart()
-plain = "********"
 msg['From']="junechatbot@gmail.com"
 msg['To'] = "divyang018@gmail.com"
 msg['Subject'] = "ALERT!!"
@@ -50,7 +49,7 @@ with open("detected.png",'rb') as fp:
 
 server = smtplib.SMTP('smtp.gmail.com: 587')
 server.starttls()
-server.login(msg['From'],plain)
+server.login(msg['From'],"june123@#")
 server.sendmail(msg['From'], msg['To'],msg.as_string())
 server.quit()
 
