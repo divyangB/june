@@ -10,7 +10,9 @@ import pafy
 import vlc
 import cv2
 from bs4 import BeautifulSoup
+import random
 import smtplib
+import sys
 from email.mime.multipart import MIMEMultipart
 from email.mime.image import MIMEImage
 from email.mime.text import MIMEText
@@ -42,6 +44,13 @@ msg = MIMEMultipart()
 msg['From']="junechatbot@gmail.com"
 msg['To'] = "divyang018@gmail.com"
 msg['Subject'] = "ALERT!!"
+num = random.randint(0,100)
+
+alert_msg = "Did you just sign in ?"
+alert1 = str(alert_msg)
+alert2 = "Use" + str(" ") + str(num) + str(" ") + "to sign in."
+msg.attach(MIMEText(alert1,'plain'))
+msg.attach(MIMEText(alert2,'plain'))
 
 with open("detected.png",'rb') as fp:
 	img = MIMEImage(fp.read())
@@ -52,6 +61,13 @@ server.starttls()
 server.login(msg['From'],"june123@#")
 server.sendmail(msg['From'], msg['To'],msg.as_string())
 server.quit()
+
+action = input("Please enter the number received on the registered mail to proceed further: ")
+if int(action)!=int(num):
+	print("Password incorrect")	
+	sys.exit()
+	
+	
 
 #bot intro
 bot_start = "Hi! I am June. How may I help you?"
